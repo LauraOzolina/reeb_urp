@@ -33,6 +33,23 @@ MonoBehaviour:
   Values:
   - {fileID: 6162278229547101516}
   - {fileID: 8850055878399606309}
+--- !u!114 &728823425896591597
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f4c3631f5e58749a59194e0cf6baf6d5, type: 3}
+  m_Name: Standalone Providers
+  m_EditorClassIdentifier: 
+  m_RequiresSettingsUpdate: 0
+  m_AutomaticLoading: 0
+  m_AutomaticRunning: 0
+  m_Loaders:
+  - {fileID: 11400000, guid: 83eff02f42ba27548a7035d7936e3c91, type: 2}
 --- !u!114 &6162278229547101516
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -59,5 +76,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d236b7d11115f2143951f1e14045df39, type: 3}
   m_Name: Standalone Settings
   m_EditorClassIdentifier: 
-  m_LoaderManagerInstance: {fileID: 0}
+  m_LoaderManagerInstance: {fileID: 728823425896591597}
   m_InitManagerOnStart: 1
