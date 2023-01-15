@@ -31,19 +31,29 @@ public class TouchKnob : MonoBehaviour
             Debug.Log("its raising");
   
             Vector3 prevpos = raiseable.transform.localPosition;
-            raiseable.transform.localPosition = new Vector3(prevpos.x, (prevpos.y+0.001f), prevpos.z);
-            Vector3 prevsize = bedpush.transform.localScale;
-            bedpush.transform.localScale = new Vector3(prevsize.x, (prevsize.y + 0.001f), prevsize.z);
+            if(raiseable.transform.localPosition.y <= 0.52f)
+            {
+                raiseable.transform.localPosition = new Vector3(prevpos.x, (prevpos.y + 0.0001f), prevpos.z);
+                Vector3 prevsize = bedpush.transform.localScale;
+                bedpush.transform.localScale = new Vector3(prevsize.x, (prevsize.y + 0.00024f), prevsize.z);
+                float dif = raiseable.transform.localPosition.y - bedpush.transform.localScale.y;
+                Debug.Log("dif" + dif);
+            }
 
+          
         }
         if (is_Lowering)
         {
             Debug.Log("its lowering");
 
-            Vector3 prevpos = raiseable.transform.position;
-            raiseable.transform.position = new Vector3(prevpos.x, (prevpos.y - 0.001f), prevpos.z);
-            Vector3 prevsize = bedpush.transform.localScale;
-            bedpush.transform.localScale = new Vector3(prevsize.x, (prevsize.y - 0.001f), prevsize.z);
+            Vector3 prevpos = raiseable.transform.localPosition;
+            if (raiseable.transform.localPosition.y >= 0.446f)
+            {
+                raiseable.transform.localPosition = new Vector3(prevpos.x, (prevpos.y - 0.0001f), prevpos.z);
+                Vector3 prevsize = bedpush.transform.localScale;
+                bedpush.transform.localScale = new Vector3(prevsize.x, (prevsize.y - 0.00024f), prevsize.z);
+            }
+   
 
         }
         if (is_Moving_in)
