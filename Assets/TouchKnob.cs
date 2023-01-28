@@ -33,9 +33,9 @@ public class TouchKnob : MonoBehaviour
             Vector3 prevpos = raiseable.transform.localPosition;
             if(raiseable.transform.localPosition.y <= 0.52f)
             {
-                raiseable.transform.localPosition = new Vector3(prevpos.x, (prevpos.y + 0.0001f), prevpos.z);
+                raiseable.transform.localPosition = new Vector3(prevpos.x, (prevpos.y + 0.001f), prevpos.z);
                 Vector3 prevsize = bedpush.transform.localScale;
-                bedpush.transform.localScale = new Vector3(prevsize.x, (prevsize.y + 0.00024f), prevsize.z);
+                bedpush.transform.localScale = new Vector3(prevsize.x, (prevsize.y + 0.0024f), prevsize.z);
                 float dif = raiseable.transform.localPosition.y - bedpush.transform.localScale.y;
                 Debug.Log("dif" + dif);
             }
@@ -49,9 +49,9 @@ public class TouchKnob : MonoBehaviour
             Vector3 prevpos = raiseable.transform.localPosition;
             if (raiseable.transform.localPosition.y >= 0.446f)
             {
-                raiseable.transform.localPosition = new Vector3(prevpos.x, (prevpos.y - 0.0001f), prevpos.z);
+                raiseable.transform.localPosition = new Vector3(prevpos.x, (prevpos.y - 0.001f), prevpos.z);
                 Vector3 prevsize = bedpush.transform.localScale;
-                bedpush.transform.localScale = new Vector3(prevsize.x, (prevsize.y - 0.00024f), prevsize.z);
+                bedpush.transform.localScale = new Vector3(prevsize.x, (prevsize.y - 0.0024f), prevsize.z);
             }
    
 

@@ -223,7 +223,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!108 &290797367
 Light:
   m_ObjectHideFlags: 0
@@ -441,6 +441,45 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 740378419}
   m_Mesh: {fileID: 10210, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!1 &817335984 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 6819270837417492773, guid: afb44f6d4655d8a45bd6585865426d72, type: 3}
+  m_PrefabInstance: {fileID: 6819270838126614328}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &817335990
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 817335984}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5b3e6359c9750ad4fb8a05c9b8704d7b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  handType: 3
+  proximityType: 3
+  executionOrder: 0
+  constraintOnRotation: 5
+  useLocalSpaceForConstraint: 0
+--- !u!114 &817335991
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 817335984}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 149fa3ae453128b41940b5caa905f8ff, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  handType: 3
+  proximityType: 3
+  executionOrder: 0
+  constraintOnMovement: 0
+  useLocalSpaceForConstraint: 0
 --- !u!1 &917663933
 GameObject:
   m_ObjectHideFlags: 0
@@ -613,7 +652,7 @@ MonoBehaviour:
   movingButtonVisuals: {fileID: 1208408763}
   distanceSpaceMode: 1
   startPushDistance: 0
-  maxPushDistance: 0.2
+  maxPushDistance: 0.02
   pressDistance: 0.02
   releaseDistanceDelta: 0.01
   returnSpeed: 25
@@ -831,7 +870,7 @@ MonoBehaviour:
   movingButtonVisuals: {fileID: 1235146829}
   distanceSpaceMode: 1
   startPushDistance: 0
-  maxPushDistance: 0.2
+  maxPushDistance: 0.02
   pressDistance: 0.02
   releaseDistanceDelta: 0.01
   returnSpeed: 25
@@ -1016,7 +1055,7 @@ MonoBehaviour:
   movingButtonVisuals: {fileID: 1359620158}
   distanceSpaceMode: 1
   startPushDistance: 0
-  maxPushDistance: 0.2
+  maxPushDistance: 0.02
   pressDistance: 0.02
   releaseDistanceDelta: 0.01
   returnSpeed: 25
@@ -1313,7 +1352,7 @@ MonoBehaviour:
   movingButtonVisuals: {fileID: 1566009567}
   distanceSpaceMode: 1
   startPushDistance: 0
-  maxPushDistance: 0.2
+  maxPushDistance: 0.02
   pressDistance: 0.02
   releaseDistanceDelta: 0.01
   returnSpeed: 25
@@ -1652,7 +1691,7 @@ MonoBehaviour:
   movingButtonVisuals: {fileID: 1786742704}
   distanceSpaceMode: 1
   startPushDistance: 0
-  maxPushDistance: 0.2
+  maxPushDistance: 0.02
   pressDistance: 0.02
   releaseDistanceDelta: 0.01
   returnSpeed: 25
@@ -2450,11 +2489,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6819270837417492760, guid: afb44f6d4655d8a45bd6585865426d72, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 1.629
+      value: 0.58
       objectReference: {fileID: 0}
     - target: {fileID: 6819270837417492760, guid: afb44f6d4655d8a45bd6585865426d72, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -1.003
+      value: -1.31
       objectReference: {fileID: 0}
     - target: {fileID: 6819270837417492760, guid: afb44f6d4655d8a45bd6585865426d72, type: 3}
       propertyPath: m_LocalPosition.z
@@ -2488,6 +2527,18 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 6819270837417492761, guid: afb44f6d4655d8a45bd6585865426d72, type: 3}
+      propertyPath: autoConstraintSelection
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6819270837417492761, guid: afb44f6d4655d8a45bd6585865426d72, type: 3}
+      propertyPath: selectedConstraints.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6819270837417492761, guid: afb44f6d4655d8a45bd6585865426d72, type: 3}
+      propertyPath: selectedConstraints.Array.data[0]
+      value: 
+      objectReference: {fileID: 817335990}
     - target: {fileID: 6819270837417492762, guid: afb44f6d4655d8a45bd6585865426d72, type: 3}
       propertyPath: m_Enabled
       value: 1
@@ -2507,6 +2558,10 @@ PrefabInstance:
     - target: {fileID: 6819270837417492773, guid: afb44f6d4655d8a45bd6585865426d72, type: 3}
       propertyPath: m_Name
       value: elekta_main
+      objectReference: {fileID: 0}
+    - target: {fileID: 6819270837417492775, guid: afb44f6d4655d8a45bd6585865426d72, type: 3}
+      propertyPath: m_Enabled
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6819270837448011247, guid: afb44f6d4655d8a45bd6585865426d72, type: 3}
       propertyPath: m_LocalPosition.x
