@@ -31,7 +31,7 @@ public class TouchKnob : MonoBehaviour
             Debug.Log("its raising");
   
             Vector3 prevpos = raiseable.transform.localPosition;
-            if(raiseable.transform.localPosition.y <= 0.52f)
+            if(raiseable.transform.localPosition.y <= 0.226f)
             {
                 raiseable.transform.localPosition = new Vector3(prevpos.x, (prevpos.y + 0.001f), prevpos.z);
                 Vector3 prevsize = bedpush.transform.localScale;
@@ -47,7 +47,7 @@ public class TouchKnob : MonoBehaviour
             Debug.Log("its lowering");
 
             Vector3 prevpos = raiseable.transform.localPosition;
-            if (raiseable.transform.localPosition.y >= 0.446f)
+            if (raiseable.transform.localPosition.y >= 0.099f)
             {
                 raiseable.transform.localPosition = new Vector3(prevpos.x, (prevpos.y - 0.001f), prevpos.z);
                 Vector3 prevsize = bedpush.transform.localScale;
@@ -107,8 +107,8 @@ public class TouchKnob : MonoBehaviour
     public void Rotate_Scanner()
     {
         is_Scanning = true;
-        anim.speed = 0.03f;
-        anim.Play("Scanner_Rotating");
+        anim.speed = 0.01f;
+        anim.Play("linac_scan");
         Debug.Log("rotate");
     }
 
