@@ -9,6 +9,9 @@ TagManager:
   - bedpush
   - movable
   - laser
+  - bedbaserot
+  - heighttmp
+  - longitudinaltmp
   layers:
   - Default
   - TransparentFX
