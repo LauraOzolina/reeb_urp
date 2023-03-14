@@ -12,6 +12,7 @@ TagManager:
   - bedbaserot
   - heighttmp
   - longitudinaltmp
+  - tattoo
   layers:
   - Default
   - TransparentFX

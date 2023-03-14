@@ -15,7 +15,7 @@ public class TouchKnob : MonoBehaviour
     public GameObject raiseable;
     public GameObject bedpush,movable,scanner,bedbase;
     AnimatorClipInfo[] m_CurrentClipInfo;
-    private bool is_Raising,is_Lowering,is_Scanning, is_Moving_out, is_Moving_in, is_Bed_Rotate_Left, is_Bed_Rotate_Right, is_Laser_Off = false;
+    private bool is_Raising,is_Lowering,is_Scanning, is_Moving_out, is_Moving_in, is_Bed_Rotate_Left, is_Bed_Rotate_Right, is_Laser_Off,is_Lat_Left,is_Lat_Right = false;
     private int direction;
     public MovementValues mvalues;
     public GameObject heighttmp;
@@ -80,7 +80,7 @@ public class TouchKnob : MonoBehaviour
             Vector3 prevpos = movable.transform.localPosition;
             movable.transform.localPosition = new Vector3((prevpos.x + 0.001f), prevpos.y, prevpos.z);
             mvalues.longitudinal = mvalues.longitudinal + 0.001f;
-            longitudinaltmp.GetComponent<TMP_Text>().text = "Longitudinal: " + System.Math.Round(mvalues.longitudinal, 2);
+            longitudinaltmp.GetComponent<TMP_Text>().text = "Long: " + System.Math.Round(mvalues.longitudinal, 2);
         }
         if (is_Moving_out)
         {
@@ -89,7 +89,7 @@ public class TouchKnob : MonoBehaviour
             Vector3 prevpos = movable.transform.localPosition;
             movable.transform.localPosition = new Vector3((prevpos.x - 0.001f), prevpos.y, prevpos.z);
             mvalues.longitudinal = mvalues.longitudinal - 0.001f;
-            longitudinaltmp.GetComponent<TMP_Text>().text = "Longitudinal: " + System.Math.Round(mvalues.longitudinal, 2);
+            longitudinaltmp.GetComponent<TMP_Text>().text = "Long: " + System.Math.Round(mvalues.longitudinal, 2);
         }
         if (is_Bed_Rotate_Left)
         {
@@ -107,6 +107,31 @@ public class TouchKnob : MonoBehaviour
                 Debug.Log(rotationVector);
                 bedbase.transform.eulerAngles = new Vector3(rotationVector.x, (rotationVector.y - 0.1f), rotationVector.z);
             
+        }
+
+        if (is_Lat_Left)
+        {
+
+         
+            Vector3 prevpos = raiseable.transform.localPosition;
+            if (raiseable.transform.localPosition.z < 0.1f)
+            {
+                raiseable.transform.localPosition = new Vector3(prevpos.x, prevpos.y, (prevpos.z + 0.001f));
+      
+            }
+
+        }
+        if (is_Lat_Right)
+        {
+
+
+            Vector3 prevpos = raiseable.transform.localPosition;
+            if (raiseable.transform.localPosition.z > -0.1f)
+            {
+                raiseable.transform.localPosition = new Vector3(prevpos.x, prevpos.y, (prevpos.z - 0.001f));
+
+            }
+
         }
 
     }
@@ -170,6 +195,8 @@ public class TouchKnob : MonoBehaviour
     {
         is_Moving_out = false;
         is_Moving_in = false;
+        is_Lat_Left = false;
+        is_Lat_Right = false;
         //anim.speed = 0;
         Debug.Log("stopmoving");
     }
@@ -195,6 +222,19 @@ public class TouchKnob : MonoBehaviour
         is_Bed_Rotate_Right = false;
 
         Debug.Log("stop_bed_rotate");
+
+    }
+
+    public void Bed_Lat_Left()
+    {
+        is_Lat_Left = true;
+        Debug.Log("lat_left");
+
+    }
+    public void Bed_Lat_Right()
+    {
+        is_Lat_Right = true;
+        Debug.Log("lat_right");
 
     }
 
