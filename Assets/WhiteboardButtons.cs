@@ -6,6 +6,10 @@ public class WhiteboardButtons : MonoBehaviour
 {
     public GameObject taskview;
     public GameObject settingsview;
+    void Start()
+    {
+        settingsview.SetActive(false);
+    }
     public void Task1()
     {
         Debug.Log("task1");
@@ -30,4 +34,5 @@ public class WhiteboardButtons : MonoBehaviour
         taskview.SetActive(true);
         settingsview.SetActive(false);
     }
+
 }
