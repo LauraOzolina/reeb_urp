@@ -18,6 +18,7 @@ TagManager:
   - bedrottmp
   - patientxtmp
   - patientztmp
+  - patientbody
   layers:
   - Default
   - TransparentFX

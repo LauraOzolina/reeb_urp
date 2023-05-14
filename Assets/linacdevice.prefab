@@ -1382,14 +1382,14 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4145479398064062626}
-  m_LocalRotation: {x: -0.6987817, y: 0.00000002933091, z: -0.00000003026222, w: 0.71533495}
-  m_LocalPosition: {x: -0, y: -5.25, z: 3.16}
+  m_LocalRotation: {x: -0.6986431, y: 0.00000001350418, z: -0.000000015832487, w: 0.7154703}
+  m_LocalPosition: {x: 0, y: -5.250002, z: 3.16}
   m_LocalScale: {x: 1000.00006, y: 1000.00024, z: 1000.0001}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 6238741976945537726}
+  m_Father: {fileID: 8535871391374149614}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: -88.636, y: 0, z: 0}
 --- !u!33 &3950945621080732333
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -2287,6 +2287,38 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!1 &7097889100115616167
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 8535871391374149614}
+  m_Layer: 0
+  m_Name: GameObject
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &8535871391374149614
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7097889100115616167}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 5145546072242939844}
+  m_Father: {fileID: 6238741976945537726}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &7525245279554959816
 GameObject:
   m_ObjectHideFlags: 0
@@ -3276,7 +3308,7 @@ Transform:
   m_LocalScale: {x: 0.1, y: 0.1, z: 0.1}
   m_ConstrainProportionsScale: 0
   m_Children:
-  - {fileID: 5145546072242939844}
+  - {fileID: 8535871391374149614}
   - {fileID: 9182474735312960960}
   m_Father: {fileID: 5936730106674113360}
   m_RootOrder: 1

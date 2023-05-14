@@ -24,7 +24,12 @@ public class LoadSavedValues : MonoBehaviour
     public GameObject t3_pat_x;
 
     public GameObject t3_pat_z;
-
+    public GameObject t1_bedrot;
+    public GameObject t2_bedrot;
+    public GameObject t3_bedrot;
+    public GameObject t1_scanrot;
+    public GameObject t2_scanrot;
+    public GameObject t3_scanrot;
     public int activetask;
     public GameObject btn1;
     public GameObject btn2;
@@ -73,6 +78,14 @@ public class LoadSavedValues : MonoBehaviour
 
         t3_pat_z.GetComponent<TMP_Text>().text = PlayerPrefs.GetFloat("t3_patient_x", 0f).ToString();
         t3_pat_z.GetComponent<TMP_Text>().text = PlayerPrefs.GetFloat("t3_patient_z", 0f).ToString();
+
+        t1_bedrot.GetComponent<TMP_Text>().text = PlayerPrefs.GetFloat("t1_bedrot", 0f).ToString();
+        t2_bedrot.GetComponent<TMP_Text>().text = PlayerPrefs.GetFloat("t2_bedrot", 0f).ToString();
+        t3_bedrot.GetComponent<TMP_Text>().text = PlayerPrefs.GetFloat("t3_bedrot", 0f).ToString();
+
+        t1_scanrot.GetComponent<TMP_Text>().text = PlayerPrefs.GetFloat("t1_scanrot", 0f).ToString();
+        t2_scanrot.GetComponent<TMP_Text>().text = PlayerPrefs.GetFloat("t2_scanrot", 0f).ToString();
+        t3_scanrot.GetComponent<TMP_Text>().text = PlayerPrefs.GetFloat("t3_scanrot", 0f).ToString();
     }
 
     void Update()

@@ -13,9 +13,11 @@ public class TouchKnob : MonoBehaviour
     float prevSpeed;
     int animationState;
     public GameObject raiseable;
-    public GameObject bedpush,movable,scanner,bedbase;
+    public GameObject bedpush,movable,scanner,bedbase,patient;
     AnimatorClipInfo[] m_CurrentClipInfo;
-    private bool is_Scanning_Left, is_Scanning_Right,is_Raising, is_Lowering,is_Scanning, is_Moving_out, is_Moving_in, is_Bed_Rotate_Left, is_Bed_Rotate_Right, is_Laser_Off,is_Lat_Left,is_Lat_Right = false;
+    private bool is_Patient_Moving_In, is_Patient_Moving_Out, is_Patient_Moving_Left, is_Patient_Moving_Right,is_Scanning_Left, is_Scanning_Right,is_Raising, is_Lowering,
+        is_Scanning, is_Moving_out, is_Moving_in, 
+        is_Bed_Rotate_Left, is_Bed_Rotate_Right, is_Laser_Off,is_Lat_Left,is_Lat_Right = false;
     private int direction;
     public MovementValues mvalues;
     public GameObject heighttmp;
@@ -23,6 +25,8 @@ public class TouchKnob : MonoBehaviour
     public GameObject lateraltmp;
     public GameObject treatmentrottmp;
     public GameObject bedrottmp;
+    public GameObject patientxtmp;
+    public GameObject patientztmp;
     void Start()
     {
 
@@ -32,12 +36,15 @@ public class TouchKnob : MonoBehaviour
         bedpush = GameObject.FindWithTag("bedpush");
         movable = GameObject.FindWithTag("movable");
         scanner = GameObject.FindWithTag("scanner");
+        patient = GameObject.FindWithTag("patientbody");
         bedbase = GameObject.FindWithTag("bedbaserot");
         heighttmp = GameObject.FindWithTag("heighttmp");
         longitudinaltmp = GameObject.FindWithTag("longitudinaltmp");
         lateraltmp = GameObject.FindWithTag("lateraltmp");
         bedrottmp = GameObject.FindWithTag("bedrottmp");
         treatmentrottmp = GameObject.FindWithTag("treatmentrottmp");
+        patientxtmp = GameObject.FindWithTag("patientxtmp");
+        patientztmp = GameObject.FindWithTag("patientztmp");
         direction = 2;
      
     }
@@ -163,6 +170,35 @@ public class TouchKnob : MonoBehaviour
             treatmentrottmp.GetComponent<TMP_Text>().text = "Treatment rot: " + System.Math.Round(mvalues.treatmentrot, 2);
         }
 
+        if (is_Patient_Moving_In)
+        {
+            Vector3 prevpos = patient.transform.localPosition;
+            patient.transform.localPosition = new Vector3((prevpos.x + 0.001f), prevpos.y, prevpos.z);
+            mvalues.patient_long = mvalues.patient_long + 0.001f;
+            patientxtmp.GetComponent<TMP_Text>().text = "Patient X: " + System.Math.Round(mvalues.patient_long, 2);
+        }
+        if (is_Patient_Moving_Out)
+        {
+            Vector3 prevpos = patient.transform.localPosition;
+            patient.transform.localPosition = new Vector3((prevpos.x - 0.001f), prevpos.y, prevpos.z);
+            mvalues.patient_long = mvalues.patient_long - 0.001f;
+            patientxtmp.GetComponent<TMP_Text>().text = "Patient X: " + System.Math.Round(mvalues.patient_long, 2);
+        }
+        if (is_Patient_Moving_Left)
+        {
+            Vector3 prevpos = patient.transform.localPosition;
+            patient.transform.localPosition = new Vector3(prevpos.x, prevpos.y, (prevpos.z + 0.001f));
+            mvalues.patient_lat = mvalues.patient_lat + 0.001f;
+            patientztmp.GetComponent<TMP_Text>().text = "Patient Z: " + System.Math.Round(mvalues.patient_lat, 2);
+        }
+        if (is_Patient_Moving_Right)
+        {
+            Vector3 prevpos = patient.transform.localPosition;
+            patient.transform.localPosition = new Vector3(prevpos.x, prevpos.y, (prevpos.z - 0.001f));
+            mvalues.patient_lat = mvalues.patient_lat - 0.001f;
+            patientztmp.GetComponent<TMP_Text>().text = "Patient Z: " + System.Math.Round(mvalues.patient_lat, 2);
+        }
+
     }
     public void Raise_Bed()
     {
@@ -241,6 +277,10 @@ public class TouchKnob : MonoBehaviour
         is_Moving_in = false;
         is_Lat_Left = false;
         is_Lat_Right = false;
+        is_Patient_Moving_In = false;
+        is_Patient_Moving_Out = false;
+        is_Patient_Moving_Left = false;
+        is_Patient_Moving_Right = false;
         //anim.speed = 0;
         Debug.Log("stopmoving");
     }
@@ -281,7 +321,30 @@ public class TouchKnob : MonoBehaviour
         Debug.Log("lat_right");
 
     }
+    public void Patient_Left()
+    {
+        is_Patient_Moving_Left = true;
+        Debug.Log("pat_left");
 
+    }
+    public void Patient_Right()
+    {
+        is_Patient_Moving_Right = true;
+        Debug.Log("pat_right");
+
+    }
+    public void Patient_Move_In()
+    {
+        is_Patient_Moving_In = true;
+        Debug.Log("pat_in");
+
+    }
+    public void Patient_Move_Out()
+    {
+        is_Patient_Moving_Out = true;
+        Debug.Log("pat_out");
+
+    }
     public void Toggle_Laser()
     {
         GameObject[] lasers = GameObject.FindGameObjectsWithTag("laser");
