@@ -5,7 +5,7 @@ using UnityEngine;
 
 public class MovementValues : MonoBehaviour
 {
-    public float height,longitudinal,lateral,patient_long,patient_lat;
+    public float height,longitudinal,lateral,patient_long,patient_lat, treatmentrot, bedrot;
     public LoadSavedValues TaskInfo;
     // Start is called before the first frame update
     void Start()
@@ -15,6 +15,8 @@ public class MovementValues : MonoBehaviour
         lateral = 0f;
         patient_long = 0f;
         patient_lat = 0f;
+        treatmentrot = 0f;
+        bedrot = 0f;
     }
 
     // Update is called once per frame

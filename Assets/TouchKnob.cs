@@ -9,23 +9,25 @@ using UnityEngine.Rendering.Universal;
 public class TouchKnob : MonoBehaviour
 {
     public GameObject elekta;
-    private Animator anim;
+    //private Animator anim;
     float prevSpeed;
     int animationState;
     public GameObject raiseable;
     public GameObject bedpush,movable,scanner,bedbase;
     AnimatorClipInfo[] m_CurrentClipInfo;
-    private bool is_Raising,is_Lowering,is_Scanning, is_Moving_out, is_Moving_in, is_Bed_Rotate_Left, is_Bed_Rotate_Right, is_Laser_Off,is_Lat_Left,is_Lat_Right = false;
+    private bool is_Scanning_Left, is_Scanning_Right,is_Raising, is_Lowering,is_Scanning, is_Moving_out, is_Moving_in, is_Bed_Rotate_Left, is_Bed_Rotate_Right, is_Laser_Off,is_Lat_Left,is_Lat_Right = false;
     private int direction;
     public MovementValues mvalues;
     public GameObject heighttmp;
     public GameObject longitudinaltmp;
     public GameObject lateraltmp;
+    public GameObject treatmentrottmp;
+    public GameObject bedrottmp;
     void Start()
     {
 
-        anim = elekta.GetComponent<Animator>();
-        prevSpeed = anim.speed;
+        //anim = elekta.GetComponent<Animator>();
+        //prevSpeed = anim.speed;
         raiseable = GameObject.FindWithTag("raiseable");
         bedpush = GameObject.FindWithTag("bedpush");
         movable = GameObject.FindWithTag("movable");
@@ -34,6 +36,8 @@ public class TouchKnob : MonoBehaviour
         heighttmp = GameObject.FindWithTag("heighttmp");
         longitudinaltmp = GameObject.FindWithTag("longitudinaltmp");
         lateraltmp = GameObject.FindWithTag("lateraltmp");
+        bedrottmp = GameObject.FindWithTag("bedrottmp");
+        treatmentrottmp = GameObject.FindWithTag("treatmentrottmp");
         direction = 2;
      
     }
@@ -99,7 +103,8 @@ public class TouchKnob : MonoBehaviour
                 Vector3 rotationVector = bedbase.transform.eulerAngles;
                 Debug.Log(rotationVector);
                 bedbase.transform.eulerAngles = new Vector3(rotationVector.x, (rotationVector.y + 0.1f), rotationVector.z);
-            
+                mvalues.bedrot = mvalues.bedrot + 0.1f;
+                bedrottmp.GetComponent<TMP_Text>().text = "Bed rot: " + System.Math.Round(mvalues.bedrot, 2);
         }
 
         if (is_Bed_Rotate_Right)
@@ -108,7 +113,8 @@ public class TouchKnob : MonoBehaviour
                 Vector3 rotationVector = bedbase.transform.eulerAngles;
                 Debug.Log(rotationVector);
                 bedbase.transform.eulerAngles = new Vector3(rotationVector.x, (rotationVector.y - 0.1f), rotationVector.z);
-            
+                mvalues.bedrot = mvalues.bedrot - 0.1f;
+                bedrottmp.GetComponent<TMP_Text>().text = "Bed rot: " + System.Math.Round(mvalues.bedrot, 2);
         }
 
         if (is_Lat_Left)
@@ -139,6 +145,24 @@ public class TouchKnob : MonoBehaviour
 
         }
 
+        if (is_Scanning_Left)
+        {
+            Vector3 rotationVector = scanner.transform.eulerAngles;
+            Debug.Log(rotationVector);
+            scanner.transform.eulerAngles =  new Vector3((rotationVector.x - 0.1f), rotationVector.y, rotationVector.z);
+            mvalues.treatmentrot = mvalues.treatmentrot + 0.1f;
+            treatmentrottmp.GetComponent<TMP_Text>().text = "Treatment rot: " + System.Math.Round(mvalues.treatmentrot, 2);
+
+        }
+        if (is_Scanning_Right)
+        {
+            Vector3 rotationVector = scanner.transform.eulerAngles;
+            Debug.Log(rotationVector);
+            scanner.transform.eulerAngles = new Vector3((rotationVector.x - 0.1f), rotationVector.y, rotationVector.z);
+            mvalues.treatmentrot = mvalues.treatmentrot - 0.1f;
+            treatmentrottmp.GetComponent<TMP_Text>().text = "Treatment rot: " + System.Math.Round(mvalues.treatmentrot, 2);
+        }
+
     }
     public void Raise_Bed()
     {
@@ -160,7 +184,11 @@ public class TouchKnob : MonoBehaviour
         //Debug.Log(m_CurrentClipInfo[0].clip.name);
         Debug.Log("stop");
     }
-
+    public void Stop_Scanner()
+    {
+        is_Scanning_Left = false;
+        is_Scanning_Right = false;
+    }
     public void Lower_Bed()
     {
         is_Lowering = true;
@@ -173,11 +201,22 @@ public class TouchKnob : MonoBehaviour
     public void Rotate_Scanner()
     {
         is_Scanning = true;
-        anim.speed = 0.01f;
-        anim.Play("linac_scan");
+        //anim.speed = 0.01f;
+        //anim.Play("linac_scan");
         Debug.Log("rotate");
     }
+    public void Rotate_Scanner_Left()
+    {
+        is_Scanning_Left = true;
 
+        Debug.Log("scan_left");
+    }
+    public void Rotate_Scanner_Right()
+    {
+        is_Scanning_Right = true;
+
+        Debug.Log("scan_right");
+    }
     public void Move_Bed_Inwards()
     {
         is_Moving_in = true;
