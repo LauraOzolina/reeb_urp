@@ -131,6 +131,8 @@ public class TouchKnob : MonoBehaviour
             Vector3 prevpos = raiseable.transform.localPosition;
             if (raiseable.transform.localPosition.z > -0.1f)
             {
+                mvalues.lateral = mvalues.lateral - 0.001f;
+                lateraltmp.GetComponent<TMP_Text>().text = "Bed Z: " + System.Math.Round(mvalues.lateral, 2);
                 raiseable.transform.localPosition = new Vector3(prevpos.x, prevpos.y, (prevpos.z - 0.001f));
 
             }
