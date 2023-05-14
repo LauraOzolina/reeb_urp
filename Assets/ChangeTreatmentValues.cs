@@ -2,33 +2,37 @@ using System.Collections;
 using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
+using UnityEngine.EventSystems;
 
 public class ChangeTreatmentValues : MonoBehaviour
 {
     public GameObject value;
     public string prefname;
-    int val;
+    float val;
+    bool ispressed = false;
+    public int btnwhich;
+
     public void PlusOne()
     {
-        val = int.Parse(value.GetComponent<TMP_Text>().text);
-        if (val < 3)
-        {
-            val += 1;
-            PlayerPrefs.SetInt(prefname, val);
-        }
+        val = float.Parse(value.GetComponent<TMP_Text>().text);
+     
+        val += 0.5f;
+        PlayerPrefs.SetFloat(prefname, val);
+       
         value.GetComponent<TMP_Text>().text = val.ToString();
     }
 
     public void MinusOne()
     {
         
-        val = int.Parse(value.GetComponent<TMP_Text>().text);
-        if(val > 0)
-        {
-            val -= 1;
-            PlayerPrefs.SetInt(prefname, val);
-        }
+        val = float.Parse(value.GetComponent<TMP_Text>().text);
+  
+        val -= 0.5f;
+        PlayerPrefs.SetFloat(prefname, val);
+        
        
         value.GetComponent<TMP_Text>().text = val.ToString();
     }
+
+
 }

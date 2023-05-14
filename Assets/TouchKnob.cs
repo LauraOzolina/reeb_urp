@@ -20,6 +20,7 @@ public class TouchKnob : MonoBehaviour
     public MovementValues mvalues;
     public GameObject heighttmp;
     public GameObject longitudinaltmp;
+    public GameObject lateraltmp;
     void Start()
     {
 
@@ -32,6 +33,7 @@ public class TouchKnob : MonoBehaviour
         bedbase = GameObject.FindWithTag("bedbaserot");
         heighttmp = GameObject.FindWithTag("heighttmp");
         longitudinaltmp = GameObject.FindWithTag("longitudinaltmp");
+        lateraltmp = GameObject.FindWithTag("lateraltmp");
         direction = 2;
      
     }
@@ -49,7 +51,7 @@ public class TouchKnob : MonoBehaviour
                 bedpush.transform.localScale = new Vector3(prevsize.x, (prevsize.y + 0.0033f), prevsize.z);
                 float dif = raiseable.transform.localPosition.y - bedpush.transform.localScale.y;
                 mvalues.height = mvalues.height + 0.001f;
-                heighttmp.GetComponent<TMP_Text>().text = "Height: " + System.Math.Round(mvalues.height, 2);
+                heighttmp.GetComponent<TMP_Text>().text = "Bed Y: " + System.Math.Round(mvalues.height, 2);
 
 
 
@@ -68,7 +70,7 @@ public class TouchKnob : MonoBehaviour
                 Vector3 prevsize = bedpush.transform.localScale;
                 bedpush.transform.localScale = new Vector3(prevsize.x, (prevsize.y - 0.0033f), prevsize.z);
                 mvalues.height = mvalues.height - 0.001f;
-                heighttmp.GetComponent<TMP_Text>().text = "Height: " + System.Math.Round(mvalues.height,2);
+                heighttmp.GetComponent<TMP_Text>().text = "Bed Y: " + System.Math.Round(mvalues.height,2);
             }
    
 
@@ -80,7 +82,7 @@ public class TouchKnob : MonoBehaviour
             Vector3 prevpos = movable.transform.localPosition;
             movable.transform.localPosition = new Vector3((prevpos.x + 0.001f), prevpos.y, prevpos.z);
             mvalues.longitudinal = mvalues.longitudinal + 0.001f;
-            longitudinaltmp.GetComponent<TMP_Text>().text = "Long: " + System.Math.Round(mvalues.longitudinal, 2);
+            longitudinaltmp.GetComponent<TMP_Text>().text = "Bed X: " + System.Math.Round(mvalues.longitudinal, 2);
         }
         if (is_Moving_out)
         {
@@ -89,7 +91,7 @@ public class TouchKnob : MonoBehaviour
             Vector3 prevpos = movable.transform.localPosition;
             movable.transform.localPosition = new Vector3((prevpos.x - 0.001f), prevpos.y, prevpos.z);
             mvalues.longitudinal = mvalues.longitudinal - 0.001f;
-            longitudinaltmp.GetComponent<TMP_Text>().text = "Long: " + System.Math.Round(mvalues.longitudinal, 2);
+            longitudinaltmp.GetComponent<TMP_Text>().text = "Bed X: " + System.Math.Round(mvalues.longitudinal, 2);
         }
         if (is_Bed_Rotate_Left)
         {
@@ -117,7 +119,8 @@ public class TouchKnob : MonoBehaviour
             if (raiseable.transform.localPosition.z < 0.1f)
             {
                 raiseable.transform.localPosition = new Vector3(prevpos.x, prevpos.y, (prevpos.z + 0.001f));
-      
+                mvalues.lateral = mvalues.lateral + 0.001f;
+                lateraltmp.GetComponent<TMP_Text>().text = "Bed Z: " + System.Math.Round(mvalues.lateral, 2);
             }
 
         }
