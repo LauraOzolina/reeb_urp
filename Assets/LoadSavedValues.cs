@@ -42,6 +42,7 @@ public class LoadSavedValues : MonoBehaviour
     public GameObject statustext;
     public string[] status_msg;
     public int tattoos_aligned;
+    public MovementValues mvalues;
     // Start is called before the first frame update
     void Start()
     {
@@ -98,6 +99,7 @@ public class LoadSavedValues : MonoBehaviour
                     status_msg[1] = "Status: Patient is aligned. Treatment position can be set.";
                     statustext.GetComponent<TMP_Text>().text = status_msg[1];
                     step_1 = 2;
+                    mvalues.source.PlayOneShot(mvalues.clip);
 
                 break;
 
@@ -105,12 +107,14 @@ public class LoadSavedValues : MonoBehaviour
                     status_msg[2] = "Status: Patient is aligned. Treatment position can be set.";
                     statustext.GetComponent<TMP_Text>().text = status_msg[2];
                     step_2 = 2;
+                    mvalues.source.PlayOneShot(mvalues.clip);
                     break;
 
                 case 3:
                     status_msg[3] = "Status: Patient is aligned. Treatment position can be set.";
                     statustext.GetComponent<TMP_Text>().text = status_msg[3];
                     step_3 = 2;
+                    mvalues.source.PlayOneShot(mvalues.clip);
                     break;
             }
         }

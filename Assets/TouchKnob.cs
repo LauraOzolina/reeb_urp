@@ -156,7 +156,7 @@ public class TouchKnob : MonoBehaviour
         {
             Vector3 rotationVector = scanner.transform.eulerAngles;
             Debug.Log(rotationVector);
-            scanner.transform.eulerAngles =  new Vector3((rotationVector.x - 0.1f), rotationVector.y, rotationVector.z);
+            scanner.transform.eulerAngles =  new Vector3((rotationVector.x + 0.1f), rotationVector.y, rotationVector.z);
             mvalues.treatmentrot = mvalues.treatmentrot + 0.1f;
             treatmentrottmp.GetComponent<TMP_Text>().text = "Treatment rot: " + System.Math.Round(mvalues.treatmentrot, 2);
 
