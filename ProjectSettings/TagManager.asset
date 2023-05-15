@@ -19,6 +19,7 @@ TagManager:
   - patientxtmp
   - patientztmp
   - patientbody
+  - menubutton
   layers:
   - Default
   - TransparentFX

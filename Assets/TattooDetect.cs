@@ -13,8 +13,10 @@ public class TattooDetect : MonoBehaviour
         if(other.gameObject.tag == "laser")
         {
             TaskInfo.tattoos_aligned += 1;
+           
             this.gameObject.GetComponent<MeshRenderer>().material = correct;
-            //patient/bed is positioned on lasers
+
+            
 
         }
     }

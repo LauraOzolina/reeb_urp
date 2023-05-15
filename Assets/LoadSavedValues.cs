@@ -1,9 +1,11 @@
+using Microsoft.MixedReality.Toolkit.UI;
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
-
+using UnityEngine.EventSystems;
 public class LoadSavedValues : MonoBehaviour
 {
     public GameObject t1_treat_x;
@@ -43,9 +45,12 @@ public class LoadSavedValues : MonoBehaviour
     public string[] status_msg;
     public int tattoos_aligned;
     public MovementValues mvalues;
+    public GameObject[] btn;
     // Start is called before the first frame update
     void Start()
     {
+        
+        Debug.Log(btn.Length);
         activetask = 1;
         step_1 = 1;
         step_2 = 1;
@@ -59,8 +64,13 @@ public class LoadSavedValues : MonoBehaviour
         t1_treat_y.GetComponent<TMP_Text>().text = PlayerPrefs.GetFloat("t1_treatment_y", 0f).ToString();
         t1_treat_z.GetComponent<TMP_Text>().text = PlayerPrefs.GetFloat("t1_treatment_z", 0f).ToString();
 
-        txt = "Treatment (left limb) :  X: " + t1_treat_x.GetComponent<TMP_Text>().text + " Y: " 
-        + t1_treat_y.GetComponent<TMP_Text>().text + " Z: " + t1_treat_z.GetComponent<TMP_Text>().text;
+        txt = "Treatment (left limb) :  X: " + t1_treat_x.GetComponent<TMP_Text>().text + Environment.NewLine + 
+            " Y: "+ t1_treat_y.GetComponent<TMP_Text>().text + Environment.NewLine + 
+            " Z: " + t1_treat_z.GetComponent<TMP_Text>().text + Environment.NewLine +
+            " BedRot: " + t1_bedrot.GetComponent<TMP_Text>().text + Environment.NewLine +
+            " Patient X: " + t1_pat_x.GetComponent<TMP_Text>().text + Environment.NewLine +
+            " Patient Z: " + t1_pat_z.GetComponent<TMP_Text>().text + Environment.NewLine +
+            " Treatment rotation: " + t1_scanrot.GetComponent<TMP_Text>().text + Environment.NewLine;
         treatmentcard.GetComponent<TMP_Text>().text = txt;
 
         t2_treat_x.GetComponent<TMP_Text>().text = PlayerPrefs.GetFloat("t2_treatment_x", 0f).ToString();
@@ -91,32 +101,66 @@ public class LoadSavedValues : MonoBehaviour
 
     void Update()
     {
-        if(tattoos_aligned >= 3)
+        if(tattoos_aligned == 6)
         {
             switch (activetask)
             {
                 case 1:
-                    status_msg[1] = "Status: Patient is aligned. Treatment position can be set.";
-                    statustext.GetComponent<TMP_Text>().text = status_msg[1];
-                    step_1 = 2;
-                    mvalues.source.PlayOneShot(mvalues.clip);
+                    if(step_1 == 1)
+                    {
+                        status_msg[1] = "Status: Patient is aligned. Treatment position can be set.";
+                        statustext.GetComponent<TMP_Text>().text = status_msg[1];
+                        step_1 = 2;
+                        mvalues.source.PlayOneShot(mvalues.clip);
+                        DisableButtons();
+                       
+                    }
 
                 break;
 
                 case 2:
-                    status_msg[2] = "Status: Patient is aligned. Treatment position can be set.";
-                    statustext.GetComponent<TMP_Text>().text = status_msg[2];
-                    step_2 = 2;
-                    mvalues.source.PlayOneShot(mvalues.clip);
+                    if (step_2 == 1)
+                    {
+                        status_msg[2] = "Status: Patient is aligned. Treatment position can be set.";
+                        statustext.GetComponent<TMP_Text>().text = status_msg[2];
+                        step_2 = 2;
+                        mvalues.source.PlayOneShot(mvalues.clip);
+                        DisableButtons();
+                    }
                     break;
 
                 case 3:
-                    status_msg[3] = "Status: Patient is aligned. Treatment position can be set.";
-                    statustext.GetComponent<TMP_Text>().text = status_msg[3];
-                    step_3 = 2;
-                    mvalues.source.PlayOneShot(mvalues.clip);
+                    if (step_3 == 1)
+                    {
+                        status_msg[3] = "Status: Patient is aligned. Treatment position can be set.";
+                        statustext.GetComponent<TMP_Text>().text = status_msg[3];
+                        step_3 = 2;
+                        mvalues.source.PlayOneShot(mvalues.clip);
+                        DisableButtons();
+                    }
                     break;
             }
+        }
+    }
+
+    public void DisableButtons()
+    {
+        for (int i = 0; i < btn.Length; i++)
+        {
+            // Adding the current 'btn' to the 'buttons' list
+            btn[i].GetComponent<PressableButton>().enabled = false;
+            btn[i].SetActive(false);
+        }
+        Invoke("EnableButtons", 1.0f);
+    }
+
+    public void EnableButtons()
+    {
+        for (int i = 0; i < btn.Length; i++)
+        {
+            // Adding the current 'btn' to the 'buttons' list
+            btn[i].GetComponent<PressableButton>().enabled = true;
+            btn[i].SetActive(true);
         }
     }
 

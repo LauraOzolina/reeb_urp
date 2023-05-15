@@ -38,6 +38,8 @@ public class MovementValues : MonoBehaviour
                     {
                         Debug.Log("Bed arranged");
                         source.PlayOneShot(clip);
+                        TaskInfo.DisableButtons();
+                        
                         TaskInfo.step_1 = 3;
                         TaskInfo.status_msg[1] = "Status: Bed position set. Patient position can be set.";
                         TaskInfo.statustext.GetComponent<TMP_Text>().text = TaskInfo.status_msg[1];
@@ -53,6 +55,7 @@ public class MovementValues : MonoBehaviour
                     {
                         Debug.Log("Patient arranged");
                         source.PlayOneShot(clip);
+                        TaskInfo.DisableButtons();
                         TaskInfo.step_1 = 4;
                         TaskInfo.status_msg[1] = "Status: Patient position set. Treatment rotation can be set.";
                         TaskInfo.statustext.GetComponent<TMP_Text>().text = TaskInfo.status_msg[1];
@@ -65,6 +68,7 @@ public class MovementValues : MonoBehaviour
                     {
                         Debug.Log("Treatment arranged");
                         source.PlayOneShot(clip);
+                        TaskInfo.DisableButtons();
                         TaskInfo.step_1 = 5;
                         TaskInfo.status_msg[1] = "Status: Task completed. Correct treatment position.";
                         TaskInfo.statustext.GetComponent<TMP_Text>().text = TaskInfo.status_msg[1];
@@ -84,12 +88,42 @@ public class MovementValues : MonoBehaviour
                         && (Mathf.Approximately((float)System.Math.Round(bedrot, 2), PlayerPrefs.GetFloat("t2_bedrot", 0f))))
                     {
                         Debug.Log("Bed arranged");
+                        source.PlayOneShot(clip);
+                        TaskInfo.DisableButtons();
+
                         TaskInfo.step_2 = 3;
                         TaskInfo.status_msg[2] = "Status: Bed position set. Patient position can be set.";
                         TaskInfo.statustext.GetComponent<TMP_Text>().text = TaskInfo.status_msg[2];
                     }
 
 
+                }
+
+                if (TaskInfo.step_2 == 3)
+                {
+                    if ((Mathf.Approximately((float)System.Math.Round(patient_long, 2), PlayerPrefs.GetFloat("t2_patient_x", 0f)))
+                                      && (Mathf.Approximately((float)System.Math.Round(patient_lat, 2), PlayerPrefs.GetFloat("t2_patient_z", 0f))))
+                    {
+                        Debug.Log("Patient arranged");
+                        source.PlayOneShot(clip);
+                        TaskInfo.DisableButtons();
+                        TaskInfo.step_2 = 4;
+                        TaskInfo.status_msg[2] = "Status: Patient position set. Treatment rotation can be set.";
+                        TaskInfo.statustext.GetComponent<TMP_Text>().text = TaskInfo.status_msg[2];
+                    }
+                }
+
+                if (TaskInfo.step_2 == 4)
+                {
+                    if ((Mathf.Approximately((float)System.Math.Round(treatmentrot, 2), PlayerPrefs.GetFloat("t2_scanrot", 0f))))
+                    {
+                        Debug.Log("Treatment arranged");
+                        source.PlayOneShot(clip);
+                        TaskInfo.DisableButtons();
+                        TaskInfo.step_2 = 5;
+                        TaskInfo.status_msg[2] = "Status: Task completed. Correct treatment position.";
+                        TaskInfo.statustext.GetComponent<TMP_Text>().text = TaskInfo.status_msg[2];
+                    }
                 }
                 break;
 
@@ -103,12 +137,42 @@ public class MovementValues : MonoBehaviour
                         && (Mathf.Approximately((float)System.Math.Round(bedrot, 2), PlayerPrefs.GetFloat("t3_bedrot", 0f))))
                     {
                         Debug.Log("Bed arranged");
+                        source.PlayOneShot(clip);
+                        TaskInfo.DisableButtons();
+
                         TaskInfo.step_3 = 3;
                         TaskInfo.status_msg[3] = "Status: Bed position set. Patient position can be set.";
                         TaskInfo.statustext.GetComponent<TMP_Text>().text = TaskInfo.status_msg[3];
                     }
 
 
+                }
+
+                if (TaskInfo.step_3 == 3)
+                {
+                    if ((Mathf.Approximately((float)System.Math.Round(patient_long, 2), PlayerPrefs.GetFloat("t3_patient_x", 0f)))
+                                      && (Mathf.Approximately((float)System.Math.Round(patient_lat, 2), PlayerPrefs.GetFloat("t3_patient_z", 0f))))
+                    {
+                        Debug.Log("Patient arranged");
+                        source.PlayOneShot(clip);
+                        TaskInfo.DisableButtons();
+                        TaskInfo.step_3 = 4;
+                        TaskInfo.status_msg[3] = "Status: Patient position set. Treatment rotation can be set.";
+                        TaskInfo.statustext.GetComponent<TMP_Text>().text = TaskInfo.status_msg[3];
+                    }
+                }
+
+                if (TaskInfo.step_3 == 4)
+                {
+                    if ((Mathf.Approximately((float)System.Math.Round(treatmentrot, 2), PlayerPrefs.GetFloat("t3_scanrot", 0f))))
+                    {
+                        Debug.Log("Treatment arranged");
+                        source.PlayOneShot(clip);
+                        TaskInfo.DisableButtons();
+                        TaskInfo.step_3 = 5;
+                        TaskInfo.status_msg[3] = "Status: Task completed. Correct treatment position.";
+                        TaskInfo.statustext.GetComponent<TMP_Text>().text = TaskInfo.status_msg[3];
+                    }
                 }
                 break;
         }

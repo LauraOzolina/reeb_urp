@@ -1,7 +1,9 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
 public class WhiteboardButtons : MonoBehaviour
@@ -27,8 +29,13 @@ public class WhiteboardButtons : MonoBehaviour
        
         TaskInfo.statustext.GetComponent<TMP_Text>().text = TaskInfo.status_msg[1];
 
-        txt = "Treatment (left limb) :  X: " + PlayerPrefs.GetFloat("t1_treatment_x", 0f).ToString() + " Y: "
-        + PlayerPrefs.GetFloat("t1_treatment_y", 0f).ToString() + " Z: " + PlayerPrefs.GetFloat("t1_treatment_z", 0f).ToString();
+        txt = "Treatment (left limb) :  X: " + TaskInfo.t1_treat_x.GetComponent<TMP_Text>().text + Environment.NewLine +
+        " Y: " + TaskInfo.t1_treat_y.GetComponent<TMP_Text>().text + Environment.NewLine +
+        " Z: " + TaskInfo.t1_treat_z.GetComponent<TMP_Text>().text + Environment.NewLine +
+        " BedRot: " + TaskInfo.t1_bedrot.GetComponent<TMP_Text>().text + Environment.NewLine +
+        " Patient X: " + TaskInfo.t1_pat_x.GetComponent<TMP_Text>().text + Environment.NewLine +
+        " Patient Z: " + TaskInfo.t1_pat_z.GetComponent<TMP_Text>().text + Environment.NewLine +
+        " Treatment rotation: " + TaskInfo.t1_scanrot.GetComponent<TMP_Text>().text + Environment.NewLine;
         treatmentcard.GetComponent<TMP_Text>().text = txt;
     }
     public void Task2()
@@ -38,8 +45,13 @@ public class WhiteboardButtons : MonoBehaviour
         btn2.GetComponent<Image>().color = new Color32(93, 195, 138, 255);
         btn3.GetComponent<Image>().color = new Color32(255, 255, 255, 255);
         TaskInfo.statustext.GetComponent<TMP_Text>().text = TaskInfo.status_msg[2];
-        txt = "Treatment (right breast) :  X: " + PlayerPrefs.GetFloat("t2_treatment_x", 0f).ToString() + " Y: "
-        + PlayerPrefs.GetFloat("t2_treatment_y", 0f).ToString() + " Z: " + PlayerPrefs.GetFloat("t2_treatment_z", 0f).ToString();
+        txt = "Treatment (right breast) :  X: " + TaskInfo.t2_treat_x.GetComponent<TMP_Text>().text + Environment.NewLine +
+        " Y: " + TaskInfo.t2_treat_y.GetComponent<TMP_Text>().text + Environment.NewLine +
+        " Z: " + TaskInfo.t2_treat_z.GetComponent<TMP_Text>().text + Environment.NewLine +
+        " BedRot: " + TaskInfo.t2_bedrot.GetComponent<TMP_Text>().text + Environment.NewLine +
+        " Patient X: " + TaskInfo.t2_pat_x.GetComponent<TMP_Text>().text + Environment.NewLine +
+        " Patient Z: " + TaskInfo.t2_pat_z.GetComponent<TMP_Text>().text + Environment.NewLine +
+        " Treatment rotation: " + TaskInfo.t2_scanrot.GetComponent<TMP_Text>().text + Environment.NewLine;
         treatmentcard.GetComponent<TMP_Text>().text = txt;
     }
     public void Task3()
@@ -49,8 +61,13 @@ public class WhiteboardButtons : MonoBehaviour
         btn2.GetComponent<Image>().color = new Color32(255, 255, 255, 255);
         btn3.GetComponent<Image>().color = new Color32(93, 195, 138, 255);
         TaskInfo.statustext.GetComponent<TMP_Text>().text = TaskInfo.status_msg[3];
-        txt = "Treatment (...) :  X: " + PlayerPrefs.GetFloat("t3_treatment_x", 0f).ToString() + " Y: "
-        + PlayerPrefs.GetFloat("t3_treatment_y", 0f).ToString() + " Z: " + PlayerPrefs.GetFloat("t3_treatment_z", 0f).ToString();
+        txt = "Treatment (...) :  X: " + TaskInfo.t3_treat_x.GetComponent<TMP_Text>().text + Environment.NewLine +
+            " Y: " + TaskInfo.t3_treat_y.GetComponent<TMP_Text>().text + Environment.NewLine +
+            " Z: " + TaskInfo.t3_treat_z.GetComponent<TMP_Text>().text + Environment.NewLine +
+            " BedRot: " + TaskInfo.t3_bedrot.GetComponent<TMP_Text>().text + Environment.NewLine +
+            " Patient X: " + TaskInfo.t3_pat_x.GetComponent<TMP_Text>().text + Environment.NewLine +
+            " Patient Z: " + TaskInfo.t3_pat_z.GetComponent<TMP_Text>().text + Environment.NewLine +
+            " Treatment rotation: " + TaskInfo.t3_scanrot.GetComponent<TMP_Text>().text + Environment.NewLine;
         treatmentcard.GetComponent<TMP_Text>().text = txt;
     }
 
@@ -64,6 +81,11 @@ public class WhiteboardButtons : MonoBehaviour
     {
         taskview.SetActive(true);
         settingsview.SetActive(false);
+    }
+
+    public void ResetTasks()
+    {
+        SceneManager.LoadScene(SceneManager.GetActiveScene().name);
     }
 
 }
