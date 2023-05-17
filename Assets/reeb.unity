@@ -1820,7 +1820,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 133904635}
         m_TargetAssemblyTypeName: ChangeTreatmentValues, Assembly-CSharp
-        m_MethodName: MinusOne
+        m_MethodName: MinusZeroFive
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -2190,7 +2190,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 153957328}
         m_TargetAssemblyTypeName: ChangeTreatmentValues, Assembly-CSharp
-        m_MethodName: PlusOne
+        m_MethodName: PlusZeroFive
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -3082,7 +3082,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 243650536}
         m_TargetAssemblyTypeName: ChangeTreatmentValues, Assembly-CSharp
-        m_MethodName: PlusOne
+        m_MethodName: PlusFive
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -3954,7 +3954,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 329335405}
         m_TargetAssemblyTypeName: ChangeTreatmentValues, Assembly-CSharp
-        m_MethodName: PlusOne
+        m_MethodName: PlusZeroFive
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -4158,7 +4158,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 336954531}
         m_TargetAssemblyTypeName: ChangeTreatmentValues, Assembly-CSharp
-        m_MethodName: MinusOne
+        m_MethodName: MinusZeroFive
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -5271,7 +5271,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 438175812}
         m_TargetAssemblyTypeName: ChangeTreatmentValues, Assembly-CSharp
-        m_MethodName: PlusOne
+        m_MethodName: PlusZeroFive
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -5475,7 +5475,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 449139071}
         m_TargetAssemblyTypeName: ChangeTreatmentValues, Assembly-CSharp
-        m_MethodName: MinusOne
+        m_MethodName: MinusZeroFive
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -5897,7 +5897,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 466882977}
         m_TargetAssemblyTypeName: ChangeTreatmentValues, Assembly-CSharp
-        m_MethodName: MinusOne
+        m_MethodName: MinusZeroFive
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -6748,7 +6748,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 534467375}
         m_TargetAssemblyTypeName: ChangeTreatmentValues, Assembly-CSharp
-        m_MethodName: MinusOne
+        m_MethodName: MinusZeroFive
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -7619,7 +7619,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 592945637}
         m_TargetAssemblyTypeName: ChangeTreatmentValues, Assembly-CSharp
-        m_MethodName: MinusOne
+        m_MethodName: MinusZeroFive
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -8108,7 +8108,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 607114855}
         m_TargetAssemblyTypeName: ChangeTreatmentValues, Assembly-CSharp
-        m_MethodName: PlusOne
+        m_MethodName: PlusZeroFive
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -9898,7 +9898,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 768220665}
         m_TargetAssemblyTypeName: ChangeTreatmentValues, Assembly-CSharp
-        m_MethodName: PlusOne
+        m_MethodName: PlusZeroFive
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -10177,7 +10177,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 830758444}
         m_TargetAssemblyTypeName: ChangeTreatmentValues, Assembly-CSharp
-        m_MethodName: MinusOne
+        m_MethodName: MinusFive
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -10381,7 +10381,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 837200650}
         m_TargetAssemblyTypeName: ChangeTreatmentValues, Assembly-CSharp
-        m_MethodName: MinusOne
+        m_MethodName: MinusFive
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -10585,7 +10585,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 859559834}
         m_TargetAssemblyTypeName: ChangeTreatmentValues, Assembly-CSharp
-        m_MethodName: MinusOne
+        m_MethodName: MinusZeroFive
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -10789,7 +10789,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 885535885}
         m_TargetAssemblyTypeName: ChangeTreatmentValues, Assembly-CSharp
-        m_MethodName: PlusOne
+        m_MethodName: PlusFive
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -12229,7 +12229,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 1000044953}
         m_TargetAssemblyTypeName: ChangeTreatmentValues, Assembly-CSharp
-        m_MethodName: PlusOne
+        m_MethodName: PlusFive
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -12433,7 +12433,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 1002915066}
         m_TargetAssemblyTypeName: ChangeTreatmentValues, Assembly-CSharp
-        m_MethodName: PlusOne
+        m_MethodName: PlusFive
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -12940,7 +12940,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 1020878791}
         m_TargetAssemblyTypeName: ChangeTreatmentValues, Assembly-CSharp
-        m_MethodName: MinusOne
+        m_MethodName: MinusZeroFive
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -13355,7 +13355,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 1051144194}
         m_TargetAssemblyTypeName: ChangeTreatmentValues, Assembly-CSharp
-        m_MethodName: PlusOne
+        m_MethodName: PlusZeroFive
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -14109,7 +14109,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 1146197386}
         m_TargetAssemblyTypeName: ChangeTreatmentValues, Assembly-CSharp
-        m_MethodName: MinusOne
+        m_MethodName: MinusFive
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -14668,7 +14668,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 1199450670}
         m_TargetAssemblyTypeName: ChangeTreatmentValues, Assembly-CSharp
-        m_MethodName: PlusOne
+        m_MethodName: PlusZeroFive
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -16090,7 +16090,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 1317811861}
         m_TargetAssemblyTypeName: ChangeTreatmentValues, Assembly-CSharp
-        m_MethodName: MinusOne
+        m_MethodName: MinusZeroFive
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -17217,7 +17217,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 1474374717}
         m_TargetAssemblyTypeName: ChangeTreatmentValues, Assembly-CSharp
-        m_MethodName: MinusOne
+        m_MethodName: MinusZeroFive
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -17421,7 +17421,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 1481408003}
         m_TargetAssemblyTypeName: ChangeTreatmentValues, Assembly-CSharp
-        m_MethodName: MinusOne
+        m_MethodName: MinusFive
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -18123,7 +18123,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 1510777885}
         m_TargetAssemblyTypeName: ChangeTreatmentValues, Assembly-CSharp
-        m_MethodName: MinusOne
+        m_MethodName: MinusZeroFive
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -18327,7 +18327,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 1517614295}
         m_TargetAssemblyTypeName: ChangeTreatmentValues, Assembly-CSharp
-        m_MethodName: MinusOne
+        m_MethodName: MinusFive
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -18531,7 +18531,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 1528916306}
         m_TargetAssemblyTypeName: ChangeTreatmentValues, Assembly-CSharp
-        m_MethodName: MinusOne
+        m_MethodName: MinusZeroFive
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -18735,7 +18735,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 1535928290}
         m_TargetAssemblyTypeName: ChangeTreatmentValues, Assembly-CSharp
-        m_MethodName: PlusOne
+        m_MethodName: PlusZeroFive
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -19551,7 +19551,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 1588378200}
         m_TargetAssemblyTypeName: ChangeTreatmentValues, Assembly-CSharp
-        m_MethodName: MinusOne
+        m_MethodName: MinusZeroFive
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -20216,7 +20216,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 1655483582}
         m_TargetAssemblyTypeName: ChangeTreatmentValues, Assembly-CSharp
-        m_MethodName: PlusOne
+        m_MethodName: PlusZeroFive
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -20995,7 +20995,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 1694220195}
         m_TargetAssemblyTypeName: ChangeTreatmentValues, Assembly-CSharp
-        m_MethodName: PlusOne
+        m_MethodName: PlusZeroFive
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -21199,7 +21199,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 1719077562}
         m_TargetAssemblyTypeName: ChangeTreatmentValues, Assembly-CSharp
-        m_MethodName: MinusOne
+        m_MethodName: MinusZeroFive
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -21486,7 +21486,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 1731538237}
         m_TargetAssemblyTypeName: ChangeTreatmentValues, Assembly-CSharp
-        m_MethodName: PlusOne
+        m_MethodName: PlusZeroFive
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -21690,7 +21690,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 1738088058}
         m_TargetAssemblyTypeName: ChangeTreatmentValues, Assembly-CSharp
-        m_MethodName: PlusOne
+        m_MethodName: PlusFive
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -22527,7 +22527,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 1825353299}
         m_TargetAssemblyTypeName: ChangeTreatmentValues, Assembly-CSharp
-        m_MethodName: MinusOne
+        m_MethodName: MinusFive
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -22731,7 +22731,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 1843027062}
         m_TargetAssemblyTypeName: ChangeTreatmentValues, Assembly-CSharp
-        m_MethodName: PlusOne
+        m_MethodName: PlusFive
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -23072,7 +23072,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 1852575638}
         m_TargetAssemblyTypeName: ChangeTreatmentValues, Assembly-CSharp
-        m_MethodName: PlusOne
+        m_MethodName: PlusZeroFive
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -24267,7 +24267,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 1920506608}
         m_TargetAssemblyTypeName: ChangeTreatmentValues, Assembly-CSharp
-        m_MethodName: MinusOne
+        m_MethodName: MinusZeroFive
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -24880,7 +24880,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 1985507667}
         m_TargetAssemblyTypeName: ChangeTreatmentValues, Assembly-CSharp
-        m_MethodName: PlusOne
+        m_MethodName: PlusZeroFive
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -25084,7 +25084,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 1988630454}
         m_TargetAssemblyTypeName: ChangeTreatmentValues, Assembly-CSharp
-        m_MethodName: PlusOne
+        m_MethodName: PlusZeroFive
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -25977,7 +25977,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 2029711112}
         m_TargetAssemblyTypeName: ChangeTreatmentValues, Assembly-CSharp
-        m_MethodName: PlusOne
+        m_MethodName: PlusZeroFive
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}

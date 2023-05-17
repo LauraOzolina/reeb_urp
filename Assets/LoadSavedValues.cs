@@ -147,23 +147,23 @@ public class LoadSavedValues : MonoBehaviour
 
     public void DisableButtons()
     {
-        for (int i = 0; i < btn.Length; i++)
+      /*  for (int i = 0; i < btn.Length; i++)
         {
             // Adding the current 'btn' to the 'buttons' list
             btn[i].GetComponent<PressableButton>().enabled = false;
             //btn[i].SetActive(false);
         }
-        Invoke("EnableButtons", 1.0f);
+        Invoke("EnableButtons", 1.0f);*/
     }
 
     public void EnableButtons()
     {
-        for (int i = 0; i < btn.Length; i++)
+       /* for (int i = 0; i < btn.Length; i++)
         {
             // Adding the current 'btn' to the 'buttons' list
             btn[i].GetComponent<PressableButton>().enabled = true;
             //btn[i].SetActive(true);
-        }
+        }*/
     }
 
 
