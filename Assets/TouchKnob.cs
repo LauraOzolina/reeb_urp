@@ -379,10 +379,24 @@ public class TouchKnob : MonoBehaviour
         if (elekta.GetComponent<ObjectManipulator>().enabled)
         {
             elekta.GetComponent<ObjectManipulator>().enabled = false;
+            GameObject[] gos;
+            gos = GameObject.FindGameObjectsWithTag("menubutton");
+            for (int i = 0; i < gos.Length; i++)
+            {
+
+                gos[i].GetComponent<PressableButton>().enabled = true;
+            }
         }
         else
         {
             elekta.GetComponent<ObjectManipulator>().enabled = true;
+            GameObject[] gos;
+            gos = GameObject.FindGameObjectsWithTag("menubutton");
+            for (int i = 0; i < gos.Length; i++)
+            {
+
+                gos[i].GetComponent<PressableButton>().enabled = false;
+            }
         }
     }
 

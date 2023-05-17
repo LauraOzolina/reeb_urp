@@ -23,10 +23,10 @@ public class WhiteboardButtons : MonoBehaviour
     public void Task1()
     {
         Debug.Log("task1");
-        btn1.GetComponent<Image>().color = new Color32(93, 195, 138, 255);
-        btn2.GetComponent<Image>().color = new Color32(255, 255, 255, 255);
-        btn3.GetComponent<Image>().color = new Color32(255, 255, 255, 255);
-       
+        btn1.GetComponent<MeshRenderer>().material = TaskInfo.activebtn;
+        btn2.GetComponent<MeshRenderer>().material = TaskInfo.inactivebtn;
+        btn3.GetComponent<MeshRenderer>().material = TaskInfo.inactivebtn;
+
         TaskInfo.statustext.GetComponent<TMP_Text>().text = TaskInfo.status_msg[1];
 
         txt = "Treatment (left limb) :  X: " + TaskInfo.t1_treat_x.GetComponent<TMP_Text>().text + Environment.NewLine +
@@ -41,9 +41,9 @@ public class WhiteboardButtons : MonoBehaviour
     public void Task2()
     {
         Debug.Log("task2");
-        btn1.GetComponent<Image>().color = new Color32(255, 255, 255, 255);
-        btn2.GetComponent<Image>().color = new Color32(93, 195, 138, 255);
-        btn3.GetComponent<Image>().color = new Color32(255, 255, 255, 255);
+        btn1.GetComponent<MeshRenderer>().material = TaskInfo.inactivebtn;
+        btn2.GetComponent<MeshRenderer>().material = TaskInfo.activebtn;
+        btn3.GetComponent<MeshRenderer>().material = TaskInfo.inactivebtn;
         TaskInfo.statustext.GetComponent<TMP_Text>().text = TaskInfo.status_msg[2];
         txt = "Treatment (right breast) :  X: " + TaskInfo.t2_treat_x.GetComponent<TMP_Text>().text + Environment.NewLine +
         " Y: " + TaskInfo.t2_treat_y.GetComponent<TMP_Text>().text + Environment.NewLine +
@@ -57,9 +57,9 @@ public class WhiteboardButtons : MonoBehaviour
     public void Task3()
     {
         Debug.Log("task3");
-        btn1.GetComponent<Image>().color = new Color32(255, 255, 255, 255);
-        btn2.GetComponent<Image>().color = new Color32(255, 255, 255, 255);
-        btn3.GetComponent<Image>().color = new Color32(93, 195, 138, 255);
+        btn1.GetComponent<MeshRenderer>().material = TaskInfo.inactivebtn;
+        btn2.GetComponent<MeshRenderer>().material = TaskInfo.inactivebtn;
+        btn3.GetComponent<MeshRenderer>().material = TaskInfo.activebtn;
         TaskInfo.statustext.GetComponent<TMP_Text>().text = TaskInfo.status_msg[3];
         txt = "Treatment (...) :  X: " + TaskInfo.t3_treat_x.GetComponent<TMP_Text>().text + Environment.NewLine +
             " Y: " + TaskInfo.t3_treat_y.GetComponent<TMP_Text>().text + Environment.NewLine +

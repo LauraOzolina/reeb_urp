@@ -46,6 +46,8 @@ public class LoadSavedValues : MonoBehaviour
     public int tattoos_aligned;
     public MovementValues mvalues;
     public GameObject[] btn;
+    public Material activebtn;
+    public Material inactivebtn;
     // Start is called before the first frame update
     void Start()
     {
@@ -58,7 +60,7 @@ public class LoadSavedValues : MonoBehaviour
         status_msg[1] = "Status: Patient is not aligned to laser lines";
         status_msg[2] = "Status: Patient is not aligned to laser lines";
         status_msg[3] = "Status: Patient is not aligned to laser lines";
-        btn1.GetComponent<Image>().color = new Color32(93, 195, 138, 255);
+        btn1.GetComponent<MeshRenderer>().material = activebtn;
         statustext.GetComponent<TMP_Text>().text = status_msg[1];
         t1_treat_x.GetComponent<TMP_Text>().text = PlayerPrefs.GetFloat("t1_treatment_x", 0f).ToString();
         t1_treat_y.GetComponent<TMP_Text>().text = PlayerPrefs.GetFloat("t1_treatment_y", 0f).ToString();
@@ -149,7 +151,7 @@ public class LoadSavedValues : MonoBehaviour
         {
             // Adding the current 'btn' to the 'buttons' list
             btn[i].GetComponent<PressableButton>().enabled = false;
-            btn[i].SetActive(false);
+            //btn[i].SetActive(false);
         }
         Invoke("EnableButtons", 1.0f);
     }
@@ -160,7 +162,7 @@ public class LoadSavedValues : MonoBehaviour
         {
             // Adding the current 'btn' to the 'buttons' list
             btn[i].GetComponent<PressableButton>().enabled = true;
-            btn[i].SetActive(true);
+            //btn[i].SetActive(true);
         }
     }
 
